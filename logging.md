@@ -6,6 +6,7 @@ Every log line is a JSON object with these fields:
 
 | Field       | Type   | Description                              |
 |-------------|--------|------------------------------------------|
+| `project`   | string | SCP project name (e.g. `scp-rtg-neo`, `scp-bm-pxe-dhcp-pyserver`, `scp-gateway-neo`) |
 | `time`      | string | ISO 8601 timestamp (e.g. `2026-02-07T12:34:56.789Z`) |
 | `hostname`  | string | Container hostname                       |
 | `pid`       | number | Process ID                               |
@@ -25,5 +26,5 @@ When an error is logged, it is serialized into additional fields:
 ### Example
 
 ```json
-{"time":"2026-02-07T12:34:56.789Z","hostname":"scp-gateway","pid":1,"level":"info","name":"server","message":"express is listening on http://0.0.0.0:3000"}
+{"project":"scp-gateway-neo","time":"2026-02-07T12:34:56.789Z","hostname":"scp-gateway","pid":1,"level":"info","name":"server","message":"express is listening on http://0.0.0.0:3000"}
 ```
